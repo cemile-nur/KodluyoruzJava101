@@ -1,19 +1,22 @@
+package com.company;
 import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
 
-        int r,a;
-        double pi=3.14;
+        int kilo;
+        double boy,indeks=0 ;
 
-        Scanner inp= new Scanner(System.in);
-        System.out.println("Dairenin yarıçapını giriniz: ");
+        Scanner input= new Scanner(System.in);
 
-        r= inp.nextInt();
+        System.out.print("Lütfen Boyunuzu Metre Cinsinden Giriniz : ");
+        boy= input.nextDouble();
 
-        double alan= (pi*(r*r)* a)/360;
+        System.out.print("Lütfen Kilonuzu Giriniz : ");
+        kilo= input.nextInt();
 
-        System.out.println("Dairenin Merkez açısının ölçüsü: "+ alan);
+        indeks= kilo/(boy*boy);
+        System.out.print("Vücut Kitle İndeksiniz : " + indeks);
 
 
     }
