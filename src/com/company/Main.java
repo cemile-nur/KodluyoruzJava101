@@ -3,18 +3,18 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int km;
-        double perKm= 2.20, total,startPrice=10 ;
-        Scanner input= new Scanner(System.in);
-        System.out.print("mesafeyi km cinsinden giriniz : ");
-        km= input.nextInt();
+        int r;
+        double pi=3.14;
 
-        total= (km*perKm);
-        total+= startPrice;
+        Scanner inp= new Scanner(System.in);
+        System.out.println("Dairenin yarıçapını giriniz: ");
 
-        total= (total<20) ? 20: total;
-        System.out.print("Toplam Tutar : "+total);
+        r= inp.nextInt();
 
+        double alan= pi*r*r;
+        double cevre=2*pi*r;
+        System.out.println("Dairenin alanı: "+ alan);
+        System.out.println("Dairenin Çevresi: "+ cevre);
 
     }
 }
