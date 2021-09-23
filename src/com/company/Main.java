@@ -3,24 +3,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Scanner not = new Scanner(System.in);
-        double kdvTutari, girilenTutar, kdvliTutar;
-        Scanner tutar = new Scanner(System.in);
-        System.out.print("Tutar Giriniz: ");
-        girilenTutar = tutar.nextDouble();
-        System.out.println("Tutar: " + girilenTutar);1
+        int a,b;
+        double c;
+        Scanner input= new Scanner(System.in);
+        System.out.print("1. sayıyı Giriniz : ");
+        a= input.nextInt();
+        System.out.print("2. sayıyı Giriniz : ");
+        b= input.nextInt();
 
-        if (girilenTutar > 1000) {
-            kdvTutari = girilenTutar * 8 / 100;
-            kdvliTutar = kdvTutari + girilenTutar;
-            System.out.println("KDV Tutarı: " + kdvTutari);
-            System.out.println("KDVli Tutar: " + kdvliTutar);
-        } else {
-            kdvTutari = girilenTutar * 18 / 100;
-            kdvliTutar = kdvTutari + girilenTutar;
-            System.out.println("KDV Tutarı: " + kdvTutari);
-            System.out.println("KDVli Tutar: " + kdvliTutar);
+        c= Math.sqrt((a*a)+(b*b));
+        System.out.print("Hipotenüs :  "+ c);
 
-        }
     }
 }
