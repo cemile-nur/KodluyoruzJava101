@@ -2,35 +2,25 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-	int mat,fizik, kimya, turkce, tarih, muzik;
 
-    Scanner inp = new Scanner (System.in);
+        Scanner not = new Scanner(System.in);
+        double kdvTutari, girilenTutar, kdvliTutar;
+        Scanner tutar = new Scanner(System.in);
+        System.out.print("Tutar Giriniz: ");
+        girilenTutar = tutar.nextDouble();
+        System.out.println("Tutar: " + girilenTutar);1
 
-    System.out.print("Matematik Notunuz: ");
-    mat= inp.nextInt();
+        if (girilenTutar > 1000) {
+            kdvTutari = girilenTutar * 8 / 100;
+            kdvliTutar = kdvTutari + girilenTutar;
+            System.out.println("KDV Tutarı: " + kdvTutari);
+            System.out.println("KDVli Tutar: " + kdvliTutar);
+        } else {
+            kdvTutari = girilenTutar * 18 / 100;
+            kdvliTutar = kdvTutari + girilenTutar;
+            System.out.println("KDV Tutarı: " + kdvTutari);
+            System.out.println("KDVli Tutar: " + kdvliTutar);
 
-    System.out.print("Fizik Notunuz: ");
-    fizik= inp.nextInt();
-
-    System.out.print("Kimya Notunuz: ");
-    kimya= inp.nextInt();
-
-   System.out.print("Türkçe Notunuz: ");
-   turkce= inp.nextInt();
-
-   System.out.print("Tarih Notunuz: ");
-   tarih= inp.nextInt();
-
-   System.out.print("Müzik Notunuz: ");
-   muzik= inp.nextInt();
-
-   int toplam= (mat+ fizik+ kimya+turkce+tarih+muzik);
-   double ortalama= toplam/6;
-
-    System.out.println("Ortamanız = " + ortalama);
-    boolean kosul1 = ortalama >= 50;
-    System.out.println("Durum = " + (kosul1==true ? "Geçti" : "Kaldı"));
-
-
+        }
     }
 }
