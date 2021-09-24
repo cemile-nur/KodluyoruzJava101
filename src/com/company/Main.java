@@ -4,24 +4,37 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int armutKilo, elmaKilo, domatesKilo, muzKilo, patlicanKilo;
-        double armut=2.14, elma=3.67, domates=1.11, muz=0.95, patlican=5, toplam ;
+        int n1,n2,select;
 
         Scanner input= new Scanner(System.in);
+        System.out.print("Birinci sayıyı giriniz:");
+        n1= input.nextInt();;
+        System.out.print("İkinci sayıyı giriniz:");
+        n2= input.nextInt();;
 
-        System.out.print("Armut Kaç Kilo : ");
-        armutKilo= input.nextInt();
-        System.out.print("Elma Kaç Kilo : ");
-        elmaKilo= input.nextInt();
-        System.out.print("Domates Kaç Kilo : ");
-        domatesKilo= input.nextInt();
-        System.out.print("Muz Kaç Kilo : ");
-        muzKilo= input.nextInt();
-        System.out.print("Patlican Kaç Kilo : ");
-        patlicanKilo= input.nextInt();
+        System.out.print("1-toplama\n2-Çıkarma\n3-Çarpma\n4-Bölme");
+        System.out.print("Seçiminiz: ");
+        select= input.nextInt();
 
-        toplam= (armutKilo*armut)+(elmaKilo*elma)+(domatesKilo*domates)+(muzKilo*muz)+(patlicanKilo*patlican);
-        System.out.print("Toplam Tutar: " + toplam);
+        switch (select){
+            case 1:
+             System.out.print("toplam: " + (n1+n2));
+             break;
+            case 2:
+                System.out.print("toplam: " + (n1-n2));
+                break;
+            case 3:
+                System.out.print("toplam: " + (n1*n2));
+                break;
+            case 4:
+                System.out.print("toplam: " + (n1/n2));
+                break;
+
+                default:
+                    System.out.print("Yanlış değer girdiniz!");
+
+
+        }
 
     }
 }
