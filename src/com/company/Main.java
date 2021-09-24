@@ -1,40 +1,31 @@
 package com.company;
-import java.util.Scanner;
+import  java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        int n1,n2,select;
+        String kullaniciAdi="patika", kullaniciSifre="java159", kullaniciSifreYeni, cevap, ad, sifre;
+        Scanner kullanici = new Scanner(System.in);
 
-        Scanner input= new Scanner(System.in);
-        System.out.print("Birinci sayıyı giriniz:");
-        n1= input.nextInt();;
-        System.out.print("İkinci sayıyı giriniz:");
-        n2= input.nextInt();;
+        System.out.print("Kullanıcı Adınız: ");
+        ad = kullanici.nextLine();
+        System.out.print("Şifreniz: ");
+        sifre = kullanici.nextLine();
+        if(sifre.equals(kullaniciSifre) && ad.equals(kullaniciAdi)){
+            System.out.print("Giriş Yapıldı !");
+        }else
+            System.out.print("Yanlış Bilgi Girdiniz! Şifrenizi Yenilemek İster misiniz? ");
 
-        System.out.print("1-toplama\n2-Çıkarma\n3-Çarpma\n4-Bölme");
-        System.out.print("Seçiminiz: ");
-        select= input.nextInt();
-
-        switch (select){
-            case 1:
-             System.out.print("toplam: " + (n1+n2));
-             break;
-            case 2:
-                System.out.print("toplam: " + (n1-n2));
-                break;
-            case 3:
-                System.out.print("toplam: " + (n1*n2));
-                break;
-            case 4:
-                System.out.print("toplam: " + (n1/n2));
-                break;
-
-                default:
-                    System.out.print("Yanlış değer girdiniz!");
-
-
-        }
-
+        cevap=kullanici.nextLine();
+        if (cevap.equals("evet")){
+            System.out.print("Yeni Şifre Giriniz: ");
+            kullaniciSifreYeni=kullanici.nextLine();
+            if (kullaniciSifreYeni.equals(kullaniciSifre) || kullaniciSifreYeni.equals(sifre)){
+                System.out.print("Girdiğiniz Şifre Uygun Değil !!");
+            }else
+                System.out.print("Şifre Kaydedildi !");
+        }else
+            System.out.print("Yeniden Giriş Yapın.");
     }
 }
