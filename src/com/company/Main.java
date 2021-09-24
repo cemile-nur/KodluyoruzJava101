@@ -5,34 +5,28 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int mat,fizik,kimya,turkce,muzik;
+        int heat;
+         Scanner input = new Scanner(System.in);
+         System.out.print("Sıcaklık değerini giriniz.: ");
+        heat= input.nextInt();
 
-        Scanner input=new Scanner(System.in);
+        if(heat<5){
+            System.out.print("Kayak gidebilirsiniz.");
 
-        System.out.print("Matematik Notunuz: ");
-        mat = input.nextInt();
+        }else if(heat>=5 && heat <=10){
+            System.out.print("Sinemaya  gidebilirsiniz.");
 
-        System.out.print("Türkçe Notunuz: ");
-        turkce = input.nextInt();
-
-        System.out.print("Fizik Notunuz: ");
-        fizik = input.nextInt();
-
-        System.out.print("Kimya Notunuz: ");
-        kimya = input.nextInt();
-
-        System.out.print("Müzik Notunuz: ");
-        muzik = input.nextInt();
-
-        double avarage = (mat+fizik+kimya+turkce+muzik)/5;
-
-        if(avarage>0 && avarage<55){
-            System.out.print("Not Ortalamanız: "+avarage+" Kaldınız !");
-        }else if (avarage>=55 && avarage<=100){
-            System.out.print("Not Ortalamanız: "+avarage+" Tebrikler Geçtiniz !");
-        }else {
-            System.out.print("Girdiğiniz Notları Kontrol ediniz!" );
+        }else if(heat>=10 && heat <=15){
+            System.out.print("Sinema ve Pikniğe gidebilirsiniz.");
         }
+        else if(heat>=15 && heat <=25) {
+            System.out.print("Pikniğe  gidebilirsiniz.");
+
+        }else {
+            System.out.print("Yüzmeye  gidebilirsiniz.");
+        }
+
+
 
     }
 }
