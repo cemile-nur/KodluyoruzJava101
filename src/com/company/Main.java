@@ -4,34 +4,34 @@ import  java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        int sayi1;
-        Scanner hesapla = new Scanner(System.in);
-        System.out.print("Bir sayı giriniz: ");
-        sayi1 = hesapla.nextInt();
+      /*  int number,total=0;
+        Scanner input= new Scanner(System.in);
 
-        for(int i=0; i<= sayi1; i+=2){
-            System.out.print(i + ",");
-        }
+        do{
+            System.out.print("Sayı Girin");
+            number=input.nextInt();
 
-        System.out.print(" ******************");
+            if(number %2==1){
+                total +=number;
+            }
 
-        int sayi,i,sayac=0,toplami=0,ortalama=0;
-        Scanner inp= new Scanner(System.in);
+        }while (number>0);
+        System.out.print("Toplam Sayı" +total); */
 
-        System.out.print(" Sayı girin");
-        sayi= inp.nextInt();
+        int number,total=0;
+        Scanner input= new Scanner(System.in);
 
-        for ( i=0; i<=sayi; i++){
+        do {
+            System.out.print("Sayı Girin");
+            number = input.nextInt();
 
-            if((i % 3==0) || (i % 4==0)){
-
-                toplami+=i;
-                sayac++;
+            if ( number %4==0){
+                total+=number;
             }
         }
 
-        ortalama=toplami/sayac;
-        System.out.print("ortalama= "+ortalama);
+        while (number %2==0);
 
+        System.out.print("toplam :"+ total);
     }
 }
