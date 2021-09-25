@@ -5,51 +5,26 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int dogumTarihi;
+        int yıl;
         Scanner input =new Scanner(System.in);
 
-        System.out.print("Doğum Tarihinizi Giriniz: ");
-        dogumTarihi= input.nextInt();
+        System.out.print("Yıl Giriniz: ");
+        yıl= input.nextInt();
 
-        if(dogumTarihi % 12==0){
+        if(yıl % 4==0){
+            System.out.print( yıl +" bir artık yıldır ! ");
 
-            System.out.print("Çin Zodyağı Burcunuz :Maymun");
+        }else if((yıl %100==0) && (yıl %400==0)){
 
-        }else if (dogumTarihi % 12==1){
-            System.out.print("Çin Zodyağı Burcunuz :Horoz");
+            System.out.print( yıl +" bir artık yıldır ! ");
 
-        } else if (dogumTarihi % 12==2){
-            System.out.print("Çin Zodyağı Burcunuz :Köpek");
+        }else if (yıl == 1700 && yıl==1800 && yıl ==1900){
 
-        }else if (dogumTarihi % 12==3){
-            System.out.print("Çin Zodyağı Burcunuz :Domuz");
+            System.out.print( yıl +" bir artık yıl değildir ! ");
 
-        }else if (dogumTarihi % 12==4){
-            System.out.print("Çin Zodyağı Burcunuz :Fare");
-
-        }else if (dogumTarihi % 12==5){
-            System.out.print("Çin Zodyağı Burcunuz :Öküz");
-
-        }else if (dogumTarihi % 12==6){
-            System.out.print("Çin Zodyağı Burcunuz :Kaplan");
-
-        }else if (dogumTarihi % 12==7){
-            System.out.print("Çin Zodyağı Burcunuz :Tavşan");
-
-        }else if (dogumTarihi % 12==8){
-            System.out.print("Çin Zodyağı Burcunuz :Ejderha");
-
-        }else if (dogumTarihi % 12==9){
-            System.out.print("Çin Zodyağı Burcunuz :Yılan");
-
-        }else if (dogumTarihi % 12==10){
-            System.out.print("Çin Zodyağı Burcunuz :At");
-
-        }else if (dogumTarihi % 12==11) {
-            System.out.print("Çin Zodyağı Burcunuz :Koyun");
+        }else {
+            System.out.print( yıl +" bir artık yıl değildir ! ");
         }
-
-
 
 
 
