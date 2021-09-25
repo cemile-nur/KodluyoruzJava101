@@ -5,100 +5,72 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int month, day;
-        Scanner input = new Scanner(System.in);
+        //Tanımlama
+        int mesafe, yas, tip;
+        double mesafeUcreti=0.10,normalTutar,indirimliTutar,yasIndirim,tipTutar=0.20, tipIndirim;
 
-        System.out.print("Doğduğunuz ay:");
-        month = input.nextInt();
+        //Kullanıcıdan veri alma ve değişkenlere atama.
+        Scanner bilet = new Scanner(System.in);
+        System.out.print("Gideceğiniz Mesafe (KM): ");
+        mesafe = bilet.nextInt();
+        System.out.print("Yaşınız: ");
+        yas = bilet.nextInt();
+        System.out.print("Yolculuk Tipi (1:Tek Yön, 2:Gidiş-Dönüş): ");
+        tip = bilet.nextInt();
 
-        System.out.print("Doğduğunuz Gün:");
-        day = input.nextInt();
-
-        if (month == 1) {
-            if (day < 22) {
-                System.out.print(" Oğlak Burcu:");
-            } else {
-                System.out.print("Kova Burcu:");
+        //Bilet ücreti hesaplama
+        normalTutar=mesafe*mesafeUcreti;
+        if(mesafe>0 && yas>0){
+            if (yas<=12){
+                switch (tip){
+                    case 1:
+                        yasIndirim=(normalTutar*50)/100;
+                        indirimliTutar=normalTutar-yasIndirim;
+                        System.out.print("%50 indirim. Fiyat: "+indirimliTutar+" ₺");
+                        break;
+                    case 2:
+                        yasIndirim=(normalTutar*50)/100;
+                        indirimliTutar=normalTutar-yasIndirim;
+                        tipIndirim=indirimliTutar*tipTutar;
+                        System.out.print("%50+%20 indirim. Fiyat: "+tipIndirim+" ₺");
+                        break;
+                }
+            }else if (yas>12 && yas<=24){
+                switch (tip){
+                    case 1:
+                        yasIndirim=(normalTutar*10)/100;
+                        indirimliTutar=normalTutar-yasIndirim;
+                        System.out.print("%10 indirim. Fiyat: "+indirimliTutar+" ₺");
+                        break;
+                    case 2:
+                        yasIndirim=(normalTutar*10)/100;
+                        indirimliTutar=normalTutar-yasIndirim;
+                        tipIndirim=indirimliTutar*tipTutar;
+                        System.out.print("%10+%20 indirim. Fiyat: "+tipIndirim+" ₺");
+                        break;
+                }
+            }else if (yas>=65){
+                switch (tip){
+                    case 1:
+                        yasIndirim=(normalTutar*30)/100;
+                        indirimliTutar=normalTutar-yasIndirim;
+                        System.out.print("%30 indirim. Fiyat: "+indirimliTutar+" ₺");
+                        break;
+                    case 2:
+                        yasIndirim=(normalTutar*30)/100;
+                        indirimliTutar=normalTutar-yasIndirim;
+                        tipIndirim=indirimliTutar*tipTutar;
+                        System.out.print("%30+%20 indirim. Fiyat: "+tipIndirim+" ₺");
+                        break;
+                }
+            }else if (tip==2){
+                indirimliTutar=normalTutar*tipTutar;
+                System.out.print("%20 indirim. Fiyat: "+indirimliTutar+" ₺");
+            }else {
+                System.out.print("Fiyat: "+normalTutar+" ₺");
             }
-
-
-        } else if (month == 2) {
-            if (day < 20) {
-                System.out.print("kova Burcu:");
-            } else {
-                System.out.print("Balık Burcu:");
-            }
-
-        } else if (month == 3) {
-            if (day < 21) {
-                System.out.print("Kova Burcu:");
-            } else {
-                System.out.print("Balık Burcu:");
-            }
-
-        } else if (month == 4) {
-            if (day < 21) {
-                System.out.print("Balık Burcu:");
-            } else {
-                System.out.print("Koç Burcu:");
-            }
-
-        }else if (month == 5) {
-            if (day < 22) {
-                System.out.print("Koç Burcu:");
-            } else {
-                System.out.print("boğa Burcu:");
-            }
-
-        }else if (month == 6) {
-            if (day < 23) {
-                System.out.print(" Boğa Burcu:");
-            } else {
-                System.out.print(" İkizler Burcu:");
-            }
-
-        }else if (month == 6) {
-            if (day < 23) {
-                System.out.print("ikizler Burcu:");
-            } else {
-                System.out.print(" yengec Burcu:");
-            }
-
-        }else if (month == 7) {
-            if (day < 23) {
-                System.out.print("yengeç Burcu:");
-            } else {
-                System.out.print(" aslan Burcu:");
-            }
-
-        }else if (month == 8) {
-            if (day < 23) {
-                System.out.print("aslan Burcu:");
-            } else {
-                System.out.print(" başak Burcu:");
-            }
-
-        }else if (month == 9) {
-            if (day < 23) {
-                System.out.print("Başak Burcu:");
-            } else {
-                System.out.print("Terazi  Burcu:");
-            }
-
-        }else if (month == 10) {
-            if (day < 22) {
-                System.out.print("terazi Burcu:");
-            } else {
-                System.out.print(" Akrep Burcu:");
-            }
-
-        }else if (month == 11) {
-            if (day < 22) {
-                System.out.print("Akrep Burcu:");
-            } else {
-                System.out.print(" Yay Burcu:");
-            }
-
+        }else {
+            System.out.print("Hatalı Değer Girdiniz !");
         }
     }
 }
