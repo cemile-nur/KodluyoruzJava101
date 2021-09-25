@@ -4,34 +4,21 @@ import  java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-      /*  int number,total=0;
-        Scanner input= new Scanner(System.in);
+        int sayi ,islem=0,kuvvet4=0,kuvvet5=0;
+        Scanner kuvvet = new Scanner(System.in);
 
-        do{
-            System.out.print("Sayı Girin");
-            number=input.nextInt();
+        System.out.print("Bir sayı giriniz: ");
+        sayi = kuvvet.nextInt();
 
-            if(number %2==1){
-                total +=number;
-            }
+        for (int i=0; i<=sayi ; i++){
 
-        }while (number>0);
-        System.out.print("Toplam Sayı" +total); */
+            /*islem= (int) Math.pow(2,i);
+            System.out.println(islem+",");*/
 
-        int number,total=0;
-        Scanner input= new Scanner(System.in);
-
-        do {
-            System.out.print("Sayı Girin");
-            number = input.nextInt();
-
-            if ( number %4==0){
-                total+=number;
-            }
+            kuvvet4=(int) Math.pow(4,i);
+            kuvvet5=(int)Math.pow(5,i);
+            System.out.print(kuvvet4+",");
+            System.out.println(kuvvet5+",");
         }
-
-        while (number %2==0);
-
-        System.out.print("toplam :"+ total);
     }
 }
