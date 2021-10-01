@@ -5,25 +5,23 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int tekrar, sayi,max=0, min=0;
+        int sayi,toplam=0;
 
-        Scanner maxmin = new Scanner(System.in);
-        System.out.print("Kaç Sayı Gireceksiniz: ");
-        tekrar = maxmin.nextInt();
+        Scanner input = new Scanner(System.in);
+        System.out.print("Sayı Giriniz: ");
+        sayi = input.nextInt();
 
+        for(int i=1; i<sayi; i++){
 
-        for (int i=1;i<=tekrar;i++){
-            System.out.print(i+". Sayı: ");
-            sayi = maxmin.nextInt();
-
-            if (sayi>=max ){
-                max=sayi;
-
-            }else if (sayi<max && sayi<=min){
-                min=sayi;
+            if(sayi % i ==0){
+                toplam+=i;
             }
-        }
-        System.out.print("En büyük: "+ max + " En küçük: " + min);
+
+        }if(toplam==sayi){
+            System.out.print(  "Mükemmel Bir Sayıdır" );
+        }else
+
+        System.out.print( "Mükemmel bir Sayı Değildir");
 
     }
 
