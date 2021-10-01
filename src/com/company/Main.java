@@ -4,9 +4,7 @@ import  java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-
-
-        int sayac = 0;
+        
         for(int sayi=2;sayi<=100;sayi++)
         {
             int kontrol = 0;
@@ -21,11 +19,10 @@ public class Main {
 
             if(kontrol==0)
             {
-                System.out.print(sayi+"\n");
-                sayac++;
+                System.out.print(sayi + " ");
+
             }
         }
-
 
     }
 
