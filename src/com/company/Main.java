@@ -3,37 +3,42 @@ import  java.util.Scanner;
 
 public class Main {
 
+        static int besCikar( int n, boolean dNoktasi, int sayac){
 
-    static void asal(){
-        Scanner scan= new Scanner(System.in);
-        int sayi, kontrol=0;
 
-        System.out.print("sayı girin: ");
-         sayi = scan.nextInt();
-
-        for (int i = 2; i < sayi; i++)
-        {
-            if (sayi % i == 0)
-            {
-                kontrol = 1;
-                break;
+            if (dNoktasi) {
+                if (n > 0) {
+                    System.out.print(n + " ");
+                    sayac++;
+                    return besCikar(n - 5, true, sayac);
+                } else {
+                    return besCikar(n, false, sayac);
+                }
+            } else {
+                System.out.print(n + " ");
+                if (sayac > 0) {
+                    sayac--;
+                    return besCikar(n + 5, false, sayac);
+                } else {
+                    return 0;
+                }
             }
-        }
-        if(kontrol==0)
-        {
-            System.out.println(sayi +  "Asaldır. ");
 
-        }else {
-            System.out.println(sayi +  "Asal Değildir! ");
         }
-       
+
+        public static void main (String[]args){
+            int n;
+            Scanner input = new Scanner(System.in);
+
+            System.out.print("N Sayısı : ");
+            n = input.nextInt();
+
+            System.out.print("Çıktısı : ");
+            besCikar(n, true, 0);
+
+        }
     }
 
-    public static void main(String[] args) {
-
-        asal();
-    }
-}
 
 
 
