@@ -4,26 +4,34 @@ import  java.util.Scanner;
 public class Main {
 
 
-    static void usluSayi() {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Taban değeri giriniz :");
-        int base = scan.nextInt();
-        System.out.print("Üs değeri giriniz :");
-        int exponent = scan.nextInt();
-        int result = 1;
+    static void asal(){
+        Scanner scan= new Scanner(System.in);
+        int sayi, kontrol=0;
 
-        for (int i = 1; i <= exponent; i++) {
-            result *= base;
+        System.out.print("sayı girin: ");
+         sayi = scan.nextInt();
+
+        for (int i = 2; i < sayi; i++)
+        {
+            if (sayi % i == 0)
+            {
+                kontrol = 1;
+                break;
+            }
         }
+        if(kontrol==0)
+        {
+            System.out.println(sayi +  "Asaldır. ");
 
-        System.out.println("Sonuç : " + result);
-        usluSayi();
+        }else {
+            System.out.println(sayi +  "Asal Değildir! ");
+        }
+       
     }
 
     public static void main(String[] args) {
 
-     usluSayi();
-
+        asal();
     }
 }
 
