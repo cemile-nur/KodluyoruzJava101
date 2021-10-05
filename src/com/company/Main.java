@@ -3,21 +3,28 @@ import  java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
-        Scanner reader = new Scanner(System.in);
-        int n1=0,n2=1,n3,i,n;
-        System.out.print("N Sayısını Girin:");
-        n = reader.nextInt();
-        System.out.print(n1+" "+n2);//0 ve 1 yazdır
+     static  boolean isPalindrom(int number){
 
-        for(i=2;i<n;++i)//Döngü 2 den başlıyor çünkü ilk 2 terim 0 ve 1 her zaman yazılacak
-        {
-            n3=n1+n2;
-            System.out.print(" "+n3);
-            n1=n2;
-            n2=n3;
-        }
-        System.out.println();
+         int temp=number, reverseNumber=0, lastNumber;
+         while( temp !=0 ){
+
+             lastNumber= temp % 10 ;
+             reverseNumber = (reverseNumber * 10) + lastNumber;
+             temp /= 10;
+         }
+         if (number == reverseNumber)
+             return true;
+         else
+             return  false;
+     }
+    public static void main(String[] args) {
+        Scanner inp = new Scanner(System.in);
+        int sayi;
+        System.out.print("Bir sayı giriniz: ");
+        sayi= inp.nextInt();
+
+        System.out.print(isPalindrom(sayi));
+
     }
 
 }
